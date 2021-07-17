@@ -1,1 +1,13 @@
-{{!-- form when hit submit attach js newpost.js call post route to db // signupjs --}}
+<div>
+    <div>
+        <h2>Edit Post</h2>
+    </div>
+    <form>
+        <input type='hidden' id='post-id' value='{{post.id}}'>
+        <input type='text' id='post-title' value='{{post.title}}'>
+        <textarea id='postbody'>{{post.body}}</textarea>
+        <button id='update'>Update</button>
+        <button id='delete'>Delete</button>
+    </form>
+</div>
+<script src='/js/edit.js'></script>

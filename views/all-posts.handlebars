@@ -1,0 +1,12 @@
+<div class="posts list-group">
+  {{#each posts}}
+      <span>{{title}}</span>
+      <span>{{format_date createdAt}}</span>
+      <div>
+          Posted By: {{User.username}}
+      </div>
+      <div>
+          {{body}}
+      </div>
+  {{/each}}
+</div>

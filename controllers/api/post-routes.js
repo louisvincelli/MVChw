@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     try {
       const newPost= await Post.create({
         ...body,
-        user_id: req.session.user_id,
+        userId: req.session.userId,
         // title: req.session.title,
         // body: req.session.body,
       });
@@ -20,7 +20,8 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async(req, res) => {
     try {
-        const updatedPost = await Post.update(req.body, {
+      console.log('PUT ROUTE');
+        const [affectedRows] = await Post.update(req.body, {
             where: {
                 id: req.params.id,
             }
@@ -54,4 +55,4 @@ router.delete('/:id', withAuth, async(req, res) => {
     }
 });
 
-module.exports = router
+module.exports = router;
